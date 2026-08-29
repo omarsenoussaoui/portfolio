@@ -1,53 +1,47 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
+import EmailIcon from '@mui/icons-material/Email';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import PhoneIcon from '@mui/icons-material/Phone';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import DownloadIcon from '@mui/icons-material/Download';
+
+const contacts = [
+  {
+    icon: <EmailIcon />,
+    label: 'Email',
+    value: 'omarsen6@gmail.com',
+    href: 'mailto:omarsen6@gmail.com'
+  },
+  {
+    icon: <WhatsAppIcon />,
+    label: 'WhatsApp',
+    value: '+213 793 75 13 77',
+    href: 'https://wa.me/213793751377'
+  },
+  {
+    icon: <PhoneIcon />,
+    label: 'Phone',
+    value: '+213 793 75 13 77',
+    href: 'tel:+213793751377'
+  },
+  {
+    icon: <LinkedInIcon />,
+    label: 'LinkedIn',
+    value: 'omar-senoussaoui',
+    href: 'https://www.linkedin.com/in/omar-senoussaoui-9a097a195/'
+  },
+  {
+    icon: <GitHubIcon />,
+    label: 'GitHub',
+    value: 'omarsenoussaoui',
+    href: 'https://github.com/omarsenoussaoui'
+  }
+];
 
 function Contact() {
-
-  const [name, setName] = useState<string>('');
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
-
-  const [nameError, setNameError] = useState<boolean>(false);
-  const [emailError, setEmailError] = useState<boolean>(false);
-  const [messageError, setMessageError] = useState<boolean>(false);
-
-  const form = useRef();
-
-  const sendEmail = (e: any) => {
-    e.preventDefault();
-
-    setNameError(name === '');
-    setEmailError(email === '');
-    setMessageError(message === '');
-
-    /* Uncomment below if you want to enable the emailJS */
-
-    // if (name !== '' && email !== '' && message !== '') {
-    //   var templateParams = {
-    //     name: name,
-    //     email: email,
-    //     message: message
-    //   };
-
-    //   console.log(templateParams);
-    //   emailjs.send('service_id', 'template_id', templateParams, 'api_key').then(
-    //     (response) => {
-    //       console.log('SUCCESS!', response.status, response.text);
-    //     },
-    //     (error) => {
-    //       console.log('FAILED...', error);
-    //     },
-    //   );
-    //   setName('');
-    //   setEmail('');
-    //   setMessage('');
-    // }
-  };
 
   return (
     <div id="contact">
@@ -55,58 +49,35 @@ function Contact() {
         <div className="contact_wrapper">
           <h1>Contact Me</h1>
           <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-          <Box
-            ref={form}
-            component="form"
-            noValidate
-            autoComplete="off"
-            className='contact-form'
-          >
-            <div className='form-flex'>
-              <TextField
-                required
-                id="outlined-required"
-                label="Your Name"
-                placeholder="What's your name?"
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameError ? "Please enter your name" : ""}
-              />
-              <TextField
-                required
-                id="outlined-required"
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
-              />
-            </div>
-            <TextField
-              required
-              id="outlined-multiline-static"
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={message}
-              onChange={(e) => {
-                setMessage(e.target.value);
-              }}
-              error={messageError}
-              helperText={messageError ? "Please enter the message" : ""}
-            />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
+
+          <div className="contact-grid">
+            {contacts.map((contact) => (
+              <a
+                key={contact.label}
+                className="contact-card"
+                href={contact.href}
+                target={contact.href.startsWith('http') ? '_blank' : undefined}
+                rel="noreferrer"
+              >
+                <span className="contact-icon">{contact.icon}</span>
+                <span className="contact-text">
+                  <span className="contact-label">{contact.label}</span>
+                  <span className="contact-value">{contact.value}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div className="contact-cv">
+            <Button
+              variant="contained"
+              startIcon={<DownloadIcon />}
+              href={`${process.env.PUBLIC_URL}/assets/Omar_Senoussaoui_CV.pdf`}
+              download="Omar_Senoussaoui_CV.pdf"
+            >
+              Download My CV
             </Button>
-          </Box>
+          </div>
         </div>
       </div>
     </div>
