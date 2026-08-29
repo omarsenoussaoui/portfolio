@@ -55,10 +55,18 @@ import kabas09 from '../assets/images/projects/kabas-09.png';
 import Lightbox from './Lightbox';
 import '../assets/styles/Project.scss';
 
-const projects = [
+interface ProjectItem {
+    title: string;
+    subtitle?: string;
+    description: string;
+    images: string[];
+}
+
+const projects: ProjectItem[] = [
     {
         title: 'PharmaMoov',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+        subtitle: 'Online Pharmacy & Prescription Delivery Platform',
+        description: 'A multi-tenant marketplace connecting patients with local pharmacies for medication ordering, prescription upload, and home delivery or click-and-collect. Built as three ASP.NET Core applications sharing a REST API — a customer storefront, an admin back-office, and a JWT-secured API also serving the mobile apps — covering the full order lifecycle across a 10,000-product catalogue: browsing, cart and checkout, prescription handling, courier dispatch with geolocation tracking, and marketplace payments with automated commission splits to pharmacies. Stack: ASP.NET Core 3.1 (C#), Entity Framework Core, MySQL, ASP.NET MVC/Razor with Bootstrap and jQuery, MangoPay and Stripe for payments, Firebase Cloud Messaging, Google Maps, and Docker.',
         images: [pharmamoov01, pharmamoov03, pharmamoov04, pharmamoov05, pharmamoov06, pharmamoov07, pharmamoov08, pharmamoov09, pharmamoov10]
     },
     {
@@ -103,6 +111,7 @@ function Project() {
                         <img src={project.images[0]} className="zoom" alt="thumbnail" width="100%"/>
                     </button>
                     <h2 onClick={() => openProject(index)}>{project.title}</h2>
+                    {project.subtitle && <p className="project-subtitle">{project.subtitle}</p>}
                     <p>{project.description}</p>
                 </div>
             ))}
