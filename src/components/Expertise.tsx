@@ -1,44 +1,55 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faServer, faMobileScreen } from '@fortawesome/free-solid-svg-icons';
+import { faDocker } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
-    "PostgreSQL",
-    "Postman"
+    "C#",
+    ".NET",
+    "ASP.NET Core",
+    "EF Core",
+    "CQRS",
+    "MediatR",
+    "Clean Architecture",
+    "Vertical Slice Architecture",
+    "SignalR",
+    "REST APIs",
+    "FluentValidation",
+    "SQL Server",
+    "PostgreSQL"
 ];
 
 const labelsSecond = [
-    "Git",
-    "GitHub Actions",
-    "Docker",
-    "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "Flutter",
+    "Dart",
+    "BLoC",
+    "React.js",
+    "Angular",
+    "Blazor",
+    "TypeScript",
+    "JavaScript",
+    "Tailwind CSS",
+    "Bootstrap",
+    "DevExpress",
+    "HTML/CSS"
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "Docker",
+    "Git",
+    "n8n",
+    "Orange Payment",
+    "PayPal",
+    "Firebase FCM",
+    "Google/Apple Sign-In",
+    "eSIM/GSM APIs",
+    "Quartz.NET",
+    "SonarQube",
+    "SOLID",
+    "Agile",
 ];
 
 function Expertise() {
@@ -48,9 +59,9 @@ function Expertise() {
             <h1>Expertise</h1>
             <div className="skills-grid">
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
+                    <FontAwesomeIcon icon={faServer} size="3x"/>
+                    <h3>Backend & .NET Development</h3>
+                    <p>I design and build scalable backend services with .NET and C#, applying Clean Architecture, CQRS, and vertical slice patterns to keep codebases modular and maintainable. I have strong experience with EF Core, REST API design, and relational database work.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -60,9 +71,9 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                    <FontAwesomeIcon icon={faMobileScreen} size="3x"/>
+                    <h3>Mobile & Frontend Development</h3>
+                    <p>I develop cross-platform mobile applications with Flutter and Dart using the BLoC pattern, and build web interfaces with React, Angular, and Blazor. I focus on delivering intuitive, responsive user experiences across devices.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -72,9 +83,9 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
+                    <FontAwesomeIcon icon={faDocker} size="3x"/>
+                    <h3>DevOps & Integrations</h3>
+                    <p>I containerize and deploy applications with Docker, and integrate third-party services such as payment gateways, push notifications, authentication providers, and telecom APIs. I also automate workflows to support reliable production releases.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
