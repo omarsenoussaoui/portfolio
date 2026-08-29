@@ -71,22 +71,26 @@ const projects: ProjectItem[] = [
     },
     {
         title: 'Fast In Fix',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+        subtitle: 'Job Portal & Recruitment Platform',
+        description: 'An ASP.NET Core MVC recruitment web application where candidates search and apply for jobs while employers publish listings and manage incoming applications. The platform is organised around three roles handled by ASP.NET Core Identity — job seeker, employer, and administrator — each with its own dedicated area: employers post and edit job offers, review submitted CVs, and move applications through a status workflow; administrators manage users, employers, roles, and reference data such as skills, job titles, categories, and regions. Candidates browse paginated job listings, filter by keyword, region, and skill, apply with an uploaded CV, and read employer-published blog posts. The solution follows a layered architecture separating the web, data access, and shared layers, with the relational schema mapped through Entity Framework Core. Stack: C#, ASP.NET Core MVC (.NET 6), Entity Framework Core, ASP.NET Core Identity, SQL Server, Razor views, Bootstrap.',
         images: [fastinfix01, fastinfix02, fastinfix03, fastinfix04, fastinfix05, fastinfix06, fastinfix07, fastinfix08, fastinfix09, fastinfix10, fastinfix11, fastinfix12]
     },
     {
         title: 'Dar El Khotba',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+        subtitle: 'La maison des fiançailles',
+        description: 'A bilingual e-commerce platform for premium Algerian engagement gift packages (coffrets de fiançailles), designed fully in French and Arabic with right-to-left layout support. Customers browse tiered packages, place orders with a deposit payment flow including proof-of-payment upload, and receive a trackable order number with delivery to all 58 Algerian wilayas. A key-protected admin dashboard handles the full order lifecycle, package management with image uploads, and revenue statistics. Stack: React 18 · TypeScript · Vite · Tailwind CSS · shadcn/ui · Zustand · TanStack Query · i18next — ASP.NET Core (.NET 10) · EF Core · SQLite · Clean Architecture · Docker',
         images: [darelkhotba01, darelkhotba02, darelkhotba03, darelkhotba04, darelkhotba05, darelkhotba06, darelkhotba07, darelkhotba08, darelkhotba09]
     },
     {
-        title: 'Noon',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+        title: 'NooN',
+        subtitle: 'School Management System',
+        description: 'Full-stack desktop application for managing tutoring centers — student enrollment, barcode-based attendance tracking, automated payment/credit calculation, and teacher salary computation. Built a Clean Architecture .NET backend (Domain/Application/Infrastructure/API layers) with JWT auth and a React + TailwindCSS frontend supporting French/Arabic (RTL). Designed a schedule-history-aware attendance engine handling recurring sessions, mid-cycle schedule changes, and real-time credit/debt tracking. Packaged as a self-contained Windows installer (Inno Setup) for offline single-machine deployment. Stack: React, TypeScript, .NET 10, EF Core, SQLite.',
         images: [noon01, noon02, noon03, noon04, noon05, noon06, noon07, noon08, noon09, noon10, noon11, noon12, noon13, noon14]
     },
     {
         title: 'KABAS Forms',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+        subtitle: 'Full-Stack Form Builder Platform',
+        description: 'A Google Forms clone supporting drag-and-drop form creation across 10 field types, public sharing, and response collection. Includes an auto-graded quiz engine with per-question answer keys and instant scoring, plus an analytics dashboard tracking views, completion rate, and drop-off. Features JWT authentication, role-scoped access, form templates, and CSV/JSON export. Built with a layered REST API over a document database, containerized with Docker. Stack: React, TypeScript, SCSS · ASP.NET Core Web API, C#, Entity Framework Core, MongoDB · JWT Auth, Docker, xUnit.',
         images: [kabas01, kabas02, kabas03, kabas04, kabas05, kabas06, kabas07, kabas08, kabas09]
     }
 ];
